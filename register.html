@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Register</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="styles.css" rel="stylesheet" type="text/css" />
+
+
+<script type="text/javascript">
+function validate()
+{
+	var name=document.loginform.name1.value;
+	var address=document.loginform.address.value;
+	var voterid=document.loginform.voterid.value;
+	var password=document.loginform.password.value;
+	var contact=document.loginform.contactno.value;
+	var email=document.loginform.emailid.value;
+	
+	exp=/^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+       exp1=/\d{10}/;
+	   
+	   exp2=/[a-zA-Z][a-zA-Z][a-zA-Z]\d{7}/;
+
+            if(name==="" || address==="" || voterid==="" || password==="" || contact==="" || email==="")
+             {
+                 alert("None of the fields can be left blank.");
+                 return false;
+             }
+			 else if((voterid).match(exp2)==null)
+			 {
+				 alert("Please enter a valid Voter Id.");
+				 return false;
+			 }
+			 
+             else if((contact).match(exp1)==null)
+                     {
+                         alert("Please enter a valid 10 digit phone number.");
+                         return false;
+                     }
+             else if((email).match(exp)==null)
+                 {
+
+                        alert("Please enter a valid email id.");
+                        return false;
+                 }
+             else
+                     {
+                         return true;
+                     }
+
+
+}
+</script>
+
+</head>
+<body>
+<!-- start header -->
+<div id="header">
+	
+</div>
+<!-- end #header -->
+<div id="page">
+	<div id="content">
+		<div class="post">
+		<h1 class="title" >User Registration</h4>
+		<br />
+		<br />
+		<form  name="loginform" method="post" action="store1.php" onsubmit="return validate();" >
+        <div>
+		 <div style="float:left; width:40%;">
+           
+            
+            Name<br /><br />
+            Address <br /><br />
+            Voter ID<br /><br />
+            Password<br /><br />
+            Contact Number<br /><br />
+            Email- ID <br /><br /><br />
+            <br /><br /><br /><br />
+            </div> 
+            
+            <div style="float:right; width:40%;">
+            <input type="text"   name="name1" width="11.0em" id="1" value=""/><br /><br />
+            <input type="textarea" name="address" height="80" id="2" title="Address" width="11.0em" value=""/><br /><br />
+            <input type="text"   name="voterid" id="3" width="11.0em" maxlength="10" value=""/><br /><br />
+            <input type="password"  name="password" id="4" width="11.0em" value=""/><br /><br />
+            <input type="text" name="contactno" id="5" width="11.0em"  maxlength="10"/><br /><br />
+            <input type="text" name="emailid" id="6" width="11.0em" /><br /><br />
+
+<br /><br />
+            
+            
+         </div>
+         </div>
+         
+         
+<br />
+<br /><br /><br />
+<br /><br /><br />
+<br /><br /><br />
+<br /><br />
+
+
+            
+            
+         
+         
+         
+			  <div style="width:100%" align="center" style="margin-right:30px">
+			<br /><br /><br /><br />
+			  
+			
+			 
+				  <input  value="Submit" id="button" type="submit" /> &nbsp;
+				  <input  value="Clear" type="reset" id="button" />			    
+		     
+			  </div>
+		</form>
+		
+		</div>	
+	</div>
+	<!-- end #content -->
+	<div id="sidebar">
+		<div id="menu" class="box">
+			<h2 class="title">Menu</h2>
+			<ul>
+				<li class="first"><a href="index.php"><img src=images/home.jpg /></a></li>
+				
+				<li><a href="login.html">User Login</a></li>
+				<li><a href="login1.html">Cop Login</a></li>
+				<li><a href="login1.html">Admin Login</a></li>
+				<!--<li><a href="#">Support</a></li>-->
+				<li><a href="about us.html">About</a></li>
+				<li><a href="contact.php">Contact</a></li>
+			</ul>
+		</div>
+		<!-- end #menu -->
+		<div id="updates" class="box">
+			<h2 class="title">Current Stories</h2><br />
+			<marquee scrollamount="4" direction="up" onmouseover="this.stop();" onmouseout="this.start();" height="350px"><ul>
+				<li class="first">
+					<h3>January 31, 20012</h3>
+					<p>Adarsh: CBI arrests 4, including retd Army Brigadier, in Mumbai </p>
+				</li>
+				<li>
+					<h3>January 26, 2012</h3>
+					<p>Hacker 'KhantastiC' attacks government websites</p>
+				</li>
+				<li>
+					<h3>January 22, 2012</h3>
+					<p>Rapist tuition teacher arrested in Ghaziabad</p>
+				</li>
+				<li>
+					<h3>January 17, 2012</h3>
+					<p>State govt dithers over action against babus in Adarsh case</p>
+				</li>
+				<li>
+					<h3>January 14, 2012</h3>
+					<p>Amendments to NCTC defeated in Rajya Sabha</p>
+				</li>
+				<li>
+					<h3>January 14, 2012</h3>
+					<p>'Agent Vinod' banned by censor board in Pakistan</p>
+				</li>
+			</ul>
+			</marquee>
+		</div>
+		<!-- end #updates -->
+	</div>
+	<!-- end #sidebar -->
+	<div style="clear: both;">&nbsp;</div>
+
+<!-- end #page -->
+<div id="footer">
+	<p>copyright &copy; 2012</p>
+</div>
+</div>
+<!-- end #footer -->
+</body>
+</html>
